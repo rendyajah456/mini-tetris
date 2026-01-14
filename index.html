@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Tetris</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================== LOBBY ================== -->
+<div id="lobby" class="screen active">
+  <div class="lobby-box">
+    <h6>rendynouyes</h6>
+    <h1>GAME TETRIS</h1>
+    <label>Nama Pemain</label>
+    <input type="text" id="playerName" placeholder="Masukkan nama">
+
+    <label>Pilih Level</label>
+    <select id="difficulty">
+      <option value="easy">Mudah</option>
+      <option value="normal">Normal</option>
+      <option value="hard">Hard</option>
+      <option value="extreme">Extreme</option>
+    </select>
+
+    <button id="startBtn">Mulai Game</button>
+  </div>
+</div>
+
+<!-- ================== GAME ================== -->
+<div id="game" class="screen">
+  <div class="game-container">
+
+    <!-- LEFT PANEL -->
+    <div class="side-panel">
+      <div class="panel-box">
+        <h3>Player</h3>
+        <p id="uiName">-</p>
+      </div>
+
+      <div class="panel-box">
+        <h3>Score</h3>
+        <p id="uiScore">0</p>
+      </div>
+
+      <div class="panel-box">
+        <h3>Time</h3>
+        <p id="uiTime">--:--</p>
+      </div>
+
+      <div class="panel-box">
+        <h3>Next</h3>
+        <canvas id="nextCanvas" width="120" height="120"></canvas>
+      </div>
+    </div>
+
+    <!-- GAME CANVAS -->
+    <canvas id="tetris" width="300" height="600" tabindex="0"></canvas>
+
+    <!-- RIGHT PANEL -->
+    <div class="side-panel">
+      <div class="panel-box">
+        <button id="pauseBtn">Pause</button>
+        <button id="restartBtn">Restart</button>
+        <button id="backBtn">Lobby</button>
+      </div>
+
+      <!-- TOUCH CONTROLS -->
+      <div class="panel-box">
+        <h3>Leaderboard</h3>
+        <ol id="leaderboard"></ol>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================== GAME OVER ================== -->
+<div id="gameover" class="screen">
+  <div class="lobby-box">
+    <h1>GAME OVER</h1>
+    <p>Score: <span id="finalScore">0</span></p>
+    <button id="playAgainBtn">Main Lagi</button>
+    <button id="backLobbyBtn">Kembali ke Lobby</button>
+  </div>
+</div>
+
+<!-- ================== JS ================== -->
+<script src="game.js"></script>
+
+</body>
+</html>

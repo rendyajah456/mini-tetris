@@ -1,0 +1,199 @@
+/* ================== RESET ================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================== BODY ================== */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* ================== SCREEN ================== */
+.screen {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* ================== LOBBY & GAME OVER ================== */
+.lobby-box {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  text-align: center;
+}
+
+.lobby-box h1 {
+  margin-bottom: 20px;
+  color: #0ff;
+}
+
+.lobby-box label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.lobby-box input,
+.lobby-box select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+}
+
+.lobby-box button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: #0ff;
+  color: #000;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.lobby-box button:hover {
+  background: #00cccc;
+}
+
+/* ================== GAME ================== */
+.game-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+}
+
+/* ================== CANVAS ================== */
+#tetris {
+  background: #000;
+  border: 4px solid #0ff;
+  border-radius: 8px;
+}
+
+#nextCanvas {
+  background: #111;
+  border: 2px solid #555;
+  border-radius: 6px;
+}
+
+/* ================== SIDE PANEL ================== */
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 170px;
+}
+
+.panel-box {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.panel-box h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #0ff;
+}
+
+.panel-box p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ================== BUTTONS ================== */
+.panel-box button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #0ff;
+  color: #000;
+  transition: 0.2s;
+}
+
+.panel-box button:hover {
+  background: #00cccc;
+}
+
+/* ================== TOUCH CONTROLS ================== */
+.touch {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.touch button {
+  font-size: 20px;
+  padding: 12px;
+}
+
+/* ================== LEADERBOARD ================== */
+#leaderboard {
+  list-style: decimal;
+  padding-left: 20px;
+  text-align: left;
+  font-size: 14px;
+}
+
+#leaderboard li {
+  margin-bottom: 4px;
+}
+
+/* ================== GAME OVER ================== */
+#gameover h1 {
+  color: #ff5555;
+}
+
+#gameover button {
+  margin-top: 15px;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  .game-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .side-panel {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .panel-box {
+    width: 45%;
+  }
+
+  #tetris {
+    width: 90vw;
+    height: auto;
+  }
+}
